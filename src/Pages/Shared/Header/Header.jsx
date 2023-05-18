@@ -30,7 +30,16 @@ const Header = () => {
                 <Link>Home</Link>
               </li>
               <li>
-                <a>Item 3</a>
+                <Link>All Toys</Link>
+              </li>
+              <li>
+                <Link>My Toys</Link>
+              </li>
+              <li>
+                <Link> Add A Toy</Link>
+              </li>
+              <li>
+                <Link to="/blog"> Blogs</Link>
               </li>
             </ul>
           </div>
@@ -57,7 +66,7 @@ const Header = () => {
               <Link> Add A Toy</Link>
             </li>
             <li>
-              <Link> Blogs</Link>
+              <Link to="/blog"> Blogs</Link>
             </li>
           </ul>
         </div>
