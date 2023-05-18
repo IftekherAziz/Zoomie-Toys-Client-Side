@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import login from "../../assets/animation/login.json";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 const Login = () => {
@@ -17,7 +18,7 @@ const Login = () => {
   }
 
   return (
-    <div className="hero min-h-screen bg-gray-50 rounded-lg">
+    <div className="hero min-h-screen border rounded-lg">
       <div className="hero-content flex-col lg:flex-row">
         <div className="w-1/2 mr-12">
           <Lottie animationData={login} />
@@ -33,7 +34,7 @@ const Login = () => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="email"
+                  placeholder="Email"
                   className="input input-bordered"
                   required
                 />
@@ -45,15 +46,10 @@ const Login = () => {
                 <input
                   type="password"
                   name="password"
-                  placeholder="password"
+                  placeholder="Password"
                   className="input input-bordered"
                   required
-                />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
+                />              
               </div>
               <div className="form-control mt-6">
                 <input
@@ -64,11 +60,12 @@ const Login = () => {
               </div>
             </form>
             <p className="my-4 text-center">
-              New to Car Doctors{" "}
+              New to Zoomie Toys?{" "}
               <Link className="text-orange-600 font-bold" to="/signup">
                 Sign Up
               </Link>{" "}
             </p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

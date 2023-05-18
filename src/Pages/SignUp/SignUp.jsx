@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import signup from "../../assets/animation/signup.json";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 const SignUp = () => {
@@ -18,7 +19,7 @@ const SignUp = () => {
    }
 
   return (
-    <div className="hero min-h-screen bg-gray-50 rounded-lg">
+    <div className="hero min-h-screen border rounded-lg">
       <div className="hero-content flex-col lg:flex-row">
         <div className="w-1/2 mr-12">
           <Lottie animationData={signup} />
@@ -89,6 +90,7 @@ const SignUp = () => {
                 Login
               </Link>{" "}
             </p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>
