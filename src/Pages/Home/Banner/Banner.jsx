@@ -6,11 +6,11 @@ const Banner = () => {
           <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
             <div className="sm:max-w-lg">
               <h1 className="font text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Summer styles are finally here
+                Buy Latest Kids Cars Toys
               </h1>
               <p className="mt-4 text-xl text-gray-500">
-                This year, our new summer collection will shelter you from the
-                harsh elements of a world that does not care if you live or die.
+                Explore our collection of the latest kids cars toys, perfect
+                for endless hours of fun and imagination.
               </p>
             </div>
             <div>
@@ -25,37 +25,14 @@ const Banner = () => {
                       <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                         <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
                           <img
-                            src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
+                            src="https://i.ibb.co/28k5dL4/car-toys1.png"
                             alt=""
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
-                            src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
-                            alt=""
-                            className="h-full w-full object-cover object-center"
-                          />
-                        </div>
-                      </div>
-                      <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                        <div className="h-64 w-44 overflow-hidden rounded-lg">
-                          <img
-                            src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
-                            alt=""
-                            className="h-full w-full object-cover object-center"
-                          />
-                        </div>
-                        <div className="h-64 w-44 overflow-hidden rounded-lg">
-                          <img
-                            src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
-                            alt=""
-                            className="h-full w-full object-cover object-center"
-                          />
-                        </div>
-                        <div className="h-64 w-44 overflow-hidden rounded-lg">
-                          <img
-                            src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
+                            src="https://i.ibb.co/F8t91DX/car-tory-1.png"
                             alt=""
                             className="h-full w-full object-cover object-center"
                           />
@@ -64,14 +41,37 @@ const Banner = () => {
                       <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
-                            src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
+                            src="https://i.ibb.co/MPPtypz/car-tory-2.png"
                             alt=""
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
-                            src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+                            src="https://i.ibb.co/MVYCZPg/car-tory-3.png"
+                            alt=""
+                            className="h-full w-full object-cover object-center"
+                          />
+                        </div>
+                        <div className="h-64 w-44 overflow-hidden rounded-lg">
+                          <img
+                            src="https://i.ibb.co/bmfS6W9/car-tory-4.png"
+                            alt=""
+                            className="h-full w-full object-cover object-center"
+                          />
+                        </div>
+                      </div>
+                      <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                        <div className="h-64 w-44 overflow-hidden rounded-lg">
+                          <img
+                            src="https://i.ibb.co/6R0YFWf/car-tory-5.png"
+                            alt=""
+                            className="h-full w-full object-cover object-center"
+                          />
+                        </div>
+                        <div className="h-64 w-44 overflow-hidden rounded-lg">
+                          <img
+                            src="https://i.ibb.co/tZ3C2PZ/car-tory-6.png"
                             alt=""
                             className="h-full w-full object-cover object-center"
                           />

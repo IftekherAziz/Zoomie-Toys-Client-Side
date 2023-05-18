@@ -13,9 +13,11 @@ const Footer = () => {
             />
           </Link>
           <p>
-            <b>Address</b>: Dhaka, Bangladesh
-            <br />
             Providing reliable tech since 2020
+            <br />
+            <b>Email:</b> hello@zoommie.com
+            <br />
+            <b>Address:</b> Dhaka, Bangladesh
           </p>
         </div>
         <div>
