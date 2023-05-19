@@ -20,22 +20,22 @@ const Header = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link>All Toys</Link>
+        <Link to="/alltoys">All Toys</Link>
       </li>
       <li>
-        <Link to="/blog">Blog</Link>
+        <Link to="/blog">Blogs</Link>
       </li>
       <li>
         {user && (
-          <Link to="/addAToy">
-            <button>Add a Toy</button>
+          <Link to="/addtoy">
+            <button>Add A Toy</button>
           </Link>
         )}
       </li>
       <li>
         {user && (
-          <Link to="/myToy">
-            <button>My Toy</button>
+          <Link to="/mytoy">
+            <button>My Toys</button>
           </Link>
         )}
       </li>
@@ -43,7 +43,7 @@ const Header = () => {
   );
 
   return (
-    <div className="bg-zinc-50">
+    <div className="shadow-sm bg-white mb-5">
       <div className="max-w-7xl mx-auto">
         <div className="navbar ">
           <div className="navbar-start">
@@ -82,26 +82,41 @@ const Header = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{items}</ul>
           </div>
-         
+
           <div className="navbar-end mr-4">
-                <div>
-                    <li className="list-none">
-                        {
-                            user ? <button className="btn-sm btn-primary rounded mr-4" onClick={handleLogOut}>LogOut</button> :
-                                <Link to='/login'><button className="btn-sm btn-primary rounded mr-4">Login</button></Link>
-                        }
-                    </li>
-                </div>
-                <div>
-                    <label className="btn btn-ghost btn-circle avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
-                        <div className="rounded-full">
-                            {
-                                user && <img src={user?.photoURL} />
-                            }
-                        </div>
-                    </label>
-                </div>
+            <div>
+              <li className="list-none">
+                {user ? (
+                  <button className="btn  rounded mr-4" onClick={handleLogOut}>
+                    LogOut
+                  </button>
+                ) : (
+                  <Link to="/login">
+                    <button className="btn rounded mr-4">Login</button>
+                  </Link>
+                )}
+              </li>
             </div>
+            {user && (
+              <div>
+                <label
+                  className="btn btn-ghost btn-circle avatar tooltip tooltip-bottom"
+                  data-tip={user?.displayName}
+                >
+                  <div className="rounded-full border">
+                    {user?.photoURL ? (
+                      <img src={user.photoURL} alt="Image" />
+                    ) : (
+                      <img
+                        src="https://i.ibb.co/sRWsQmR/6073873.png"
+                        alt="Image"
+                      />
+                    )}
+                  </div>
+                </label>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
