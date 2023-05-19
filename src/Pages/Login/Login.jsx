@@ -1,24 +1,50 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import login from "../../assets/animation/login.json";
-import SocialLogin from "../Shared/SocialLogin/SocialLogin";
-
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-  
+  const { signIn, googleSignIn } = useContext(AuthContext);
 
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const navigate = useNavigate();
+
+  // Email Login:
   const handleLogin = (event) => {
-
     event.preventDefault();
 
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password);
-  }
+
+
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate("/");
+      })
+      .catch((error) => setErrorMessage(error));
+  };
+
+  // Google login:
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const googleLoggedUser = result.user;
+        console.log(googleLoggedUser);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
-    <div className="hero min-h-screen border rounded-lg">
+    <div className="hero min-h-screen border rounded-lg mt-10">
       <div className="hero-content flex-col lg:flex-row">
         <div className="w-1/2 mr-12">
           <Lottie animationData={login} />
@@ -49,8 +75,25 @@ const Login = () => {
                   placeholder="Password"
                   className="input input-bordered"
                   required
-                />              
+                />
               </div>
+              {errorMessage && (
+                <div className="border border-blue-600 rounded-lg w-2/3 mx-auto text text-red-600 m-2 ">
+                  {!errorMessage ? (
+                    ""
+                  ) : errorMessage ===
+                    "Firebase: Error (auth/wrong-password)." ? (
+                    <p>Wrong password. Please try again.</p>
+                  ) : errorMessage ===
+                    "Firebase: Error (auth/user-not-found)." ? (
+                    <p>
+                      User not found. Please check your email and try again.
+                    </p>
+                  ) : (
+                    <p>An error occurred. Please try again later</p>
+                  )}
+                </div>
+              )}
               <div className="form-control mt-6">
                 <input
                   className="btn btn-primary"
@@ -58,14 +101,22 @@ const Login = () => {
                   value="Login"
                 />
               </div>
+              <p className="my-4 text-center">
+                New to Zoomie Toys?{" "}
+                <Link className="text-orange-600 font-bold" to="/signup">
+                  Sign Up
+                </Link>{" "}
+              </p>
             </form>
-            <p className="my-4 text-center">
-              New to Zoomie Toys?{" "}
-              <Link className="text-orange-600 font-bold" to="/signup">
-                Sign Up
-              </Link>{" "}
-            </p>
-            <SocialLogin></SocialLogin>
+            <div className="divider">OR</div>
+            <div className="mt-2">
+              <button
+                onClick={handleGoogleSignIn}
+                className="btn btn-block gap-2"
+              >
+                Sign In with Google<FaGoogle className="text-xl"></FaGoogle>
+              </button>
+            </div>
           </div>
         </div>
       </div>
