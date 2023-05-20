@@ -7,18 +7,22 @@ import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
 
 const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
-  const [sortOrder, setSortOrder] = useState("");
 
   const { user } = useContext(AuthContext);
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/myToys?email=${user.email}&sort=${sortOrder}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setMyToys(data);
-      })
-      .catch((error) => console.error(error));
-  }, [user?.email, sortOrder]);
+  useEffect(
+    () => {
+      // Fetch data from API
+      fetch(`http://localhost:5000/myToys?email=${user.email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setMyToys(data);
+        })
+        .catch((error) => console.error(error));
+    },
+    [user?.email],
+    myToys
+  );
 
   const handleDelete = (id) => {
     fetch(`http://localhost:5000/myToy/${id}`, {
@@ -49,10 +53,6 @@ const MyToys = () => {
       });
   };
 
-  const handleSortChange = (e) => {
-    setSortOrder(e.target.value);
-  };
-
   return (
     <div className="mt-10 mb-20">
       <div className="mb-10 text-4xl font-bold text-center text-gray-800 dark:text-white">
@@ -63,15 +63,15 @@ const MyToys = () => {
         <select
           className="block px-3 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-52 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
           name="animals"
-          onChange={handleSortChange}
         >
           <option disabled>Filter By Price</option>
-          <option value="ascending">Ascending</option>
-          <option value="descending">Descending</option>
+          <option value="Ascending">Ascending </option>
+          <option value="Descending">Descending </option>
         </select>
       </div>
       <div className="overflow-x-auto">
         <table className="table w-full border rounded-xl">
+          {/* head */}
           <thead>
             <tr>
               <th>Toy Name</th>
@@ -82,7 +82,7 @@ const MyToys = () => {
               <th>Available</th>
               <th>Update</th>
               <th>Delete</th>
-              <th>Details</th>
+              <th>Deatils</th>
             </tr>
           </thead>
           <tbody>
@@ -91,32 +91,35 @@ const MyToys = () => {
                 <td>{toy.name}</td>
                 <td>
                   <img
-                    className="object-cover rounded-full h-12 w-12"
+                    className="object-cover rounded-full h-12 w-12 "
                     src={toy.image}
                     alt="Toy Car"
                   />
                 </td>
+
                 <td>{toy.subCategory}</td>
                 <td>{toy.price}</td>
                 <td>{toy.rating}</td>
+
                 <td>{toy.availableQuantity}</td>
                 <td>
                   <Link to={`/updateToy/${toy._id}`}>
                     <button>
-                      <FaRegEdit />
+                      {" "}
+                      <FaRegEdit></FaRegEdit>
                     </button>
                   </Link>
                 </td>
                 <td>
                   <Link>
                     <button onClick={() => handleDelete(toy._id)}>
-                      <FaTrashAlt />
+                      <FaTrashAlt></FaTrashAlt>
                     </button>
                   </Link>
                 </td>
                 <td>
                   <Link to={`/viewDetails/${toy._id}`}>
-                    <button className="btn btn-sm">Details</button>
+                    <button className="btn btn-sm ">Details</button>
                   </Link>
                 </td>
               </tr>
