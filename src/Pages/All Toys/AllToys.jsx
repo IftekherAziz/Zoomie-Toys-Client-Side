@@ -1,36 +1,24 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetchToys();
+    fetch("http://localhost:5000/toys")
+      .then((res) => res.json())
+      .then((data) => {
+        setToys(data);
+      });
   }, []);
 
-  const fetchToys = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:5000/toys?search=${searchQuery}`
-      );
-      setToys(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
-  };
   return (
     <div>
       <div className="text-center my-10 bg-zinc-100 p-10">
         <input
           className="border rounded py-3 px-20 text-center"
           type="text"
-          value={searchQuery}
-          onChange={handleSearch}
+          value=""
+          onChange=""
           placeholder="Search by Toy Name"
         />
       </div>
@@ -40,6 +28,7 @@ const AllToys = () => {
           <thead>
             <tr>
               <th>Seller Name</th>
+              <th>Photo</th>
               <th>Toy Name</th>
               <th>Sub-category</th>
               <th>Price</th>
@@ -50,9 +39,19 @@ const AllToys = () => {
           <tbody>
             {toys.map((toy) => (
               <tr key={toy.id}>
-                <td>{toy.sellerName || "N/A"}</td>
-                <td>{toy.name}</td>
+                <td className="font-medium">
+                  {(toy.sellerName || "N/A").charAt(0).toUpperCase() +
+                    (toy.sellerName || "N/A").slice(1)}
+                </td>
 
+                <td>
+                  <img
+                    className="mx-auto object-cover rounded-full h-12 w-12 "
+                    src={toy.image}
+                    alt=""
+                  />
+                </td>
+                <td>{toy.name}</td>
                 <td>
                   {toy.subCategory.charAt(0).toUpperCase() +
                     toy.subCategory.slice(1)}
@@ -61,7 +60,7 @@ const AllToys = () => {
                 <td>{toy.availableQuantity}</td>
                 <td>
                   {/* <button onClick={() => viewDetails(toy.id)}>View Details</button> */}
-                  <button className="btn btn-md ">View Details</button>
+                  <button className="btn btn-sm ">View Details</button>
                 </td>
               </tr>
             ))}

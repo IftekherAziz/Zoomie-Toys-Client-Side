@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 
+import { Link } from "react-router-dom";
 
 const TabCard = ({ toy }) => {
   const { _id, image, name, price, rating } = toy;
@@ -17,7 +18,9 @@ const TabCard = ({ toy }) => {
         <p>Price: {price}</p>
         <p>Rating: {rating}</p>
         <div className="card-actions mt-3">
-          <button className="btn btn-block">View Details</button>
+          <Link to={`/viewDetails/${_id}`}>
+            <button className="btn btn-block">View Details</button>
+          </Link>
         </div>
       </div>
     </div>

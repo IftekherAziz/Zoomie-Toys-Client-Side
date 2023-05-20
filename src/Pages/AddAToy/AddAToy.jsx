@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);

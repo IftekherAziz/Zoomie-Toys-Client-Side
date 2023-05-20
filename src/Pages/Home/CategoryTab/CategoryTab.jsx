@@ -5,7 +5,7 @@ import TabCard from "./TabCard";
 
 const CategoryTab = () => {
      const [toys, setToys] = useState([]);
-     const [categories, setCategories] = useState("sports_car");
+     const [categories, setCategories] = useState("Sports Car");
      useEffect(() => {
        // Fetch data from API
        fetch(`http://localhost:5000/toys/${categories}`)
@@ -31,19 +31,19 @@ const CategoryTab = () => {
             <TabList className="md:w-1/3 mx-auto md:flex mb-12">
               <Tab
                 className="font-semibold mr-2 px-4 py-2 bg-slate-800 mb-3 border text-white rounded-md cursor-pointer"
-                onClick={() => handleTabClick("sports_car")}
+                onClick={() => handleTabClick("Sports Car")}
               >
                 Sports Car
               </Tab>
               <Tab
                 className="font-semibold mr-2 px-4 py-2 bg-slate-800 mb-3 border text-white rounded-md cursor-pointer"
-                onClick={() => handleTabClick("truck")}
+                onClick={() => handleTabClick("Truck")}
               >
                 Truck
               </Tab>
               <Tab
                 className="font-semibold mr-2 px-4 py-2 bg-slate-800 mb-3 border text-white rounded-md cursor-pointer"
-                onClick={() => handleTabClick("regular_car")}
+                onClick={() => handleTabClick("Regular Car")}
               >
                 Regular Car
               </Tab>
