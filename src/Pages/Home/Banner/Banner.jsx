@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Banner = () => {
   return (
     <>
@@ -9,8 +11,8 @@ const Banner = () => {
                 Buy Latest Kids Cars Toys
               </h1>
               <p className="mt-4 text-xl text-gray-500">
-                Explore our collection of the latest kids cars toys, perfect
-                for endless hours of fun and imagination.
+                Explore our collection of the latest kids cars toys, perfect for
+                endless hours of fun and imagination.
               </p>
             </div>
             <div>
@@ -26,14 +28,14 @@ const Banner = () => {
                         <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
                           <img
                             src="https://i.ibb.co/28k5dL4/car-toys1.png"
-                            alt=""
+                            alt="Image"
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
                             src="https://i.ibb.co/F8t91DX/car-tory-1.png"
-                            alt=""
+                            alt="Image"
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
@@ -42,22 +44,22 @@ const Banner = () => {
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
                             src="https://i.ibb.co/MPPtypz/car-tory-2.png"
-                            alt=""
-                            className="h-full w-full object-cover object-center"
+                            alt="Image"
+                            className="h-full md:hidden lg:hidden w-full object-cover object-center"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
                             src="https://i.ibb.co/MVYCZPg/car-tory-3.png"
-                            alt=""
+                            alt="Image"
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
                             src="https://i.ibb.co/bmfS6W9/car-tory-4.png"
-                            alt=""
-                            className="h-full w-full object-cover object-center"
+                            alt="Image"
+                            className="h-full w-full md:hidden lg:hidden object-cover object-center"
                           />
                         </div>
                       </div>
@@ -65,14 +67,14 @@ const Banner = () => {
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
                             src="https://i.ibb.co/6R0YFWf/car-tory-5.png"
-                            alt=""
+                            alt="Image"
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
                             src="https://i.ibb.co/tZ3C2PZ/car-tory-6.png"
-                            alt=""
+                            alt="Image"
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
@@ -81,12 +83,12 @@ const Banner = () => {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+                <Link
+                  to="/alltoys"
+                  className="inline-block rounded-md border border-transparent bg-slate-900 px-8 py-3 text-center font-medium text-white"
                 >
-                  Shop Collection
-                </a>
+                  Browse Collection
+                </Link>
               </div>
             </div>
           </div>

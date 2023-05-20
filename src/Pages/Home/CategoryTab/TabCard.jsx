@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const TabCard = ({ toy }) => {
   const { _id, image, name, price, rating } = toy;
   return (
-    <div className="card w-full bg-base-100 shadow-2xl border relative group overflow-hidden">
+    <div className="card w-full bg-base-100 shadow-md border relative group overflow-hidden">
       <figure>
         <img
-          className="border-b h-[320px] transition-transform duration-300 transform-gpu group-hover:scale-105"
+          className=" h-[320px] w-full transition-transform duration-300 transform-gpu group-hover:scale-105"
           src={image}
           alt="Toys Car"
         />

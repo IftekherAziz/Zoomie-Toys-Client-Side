@@ -65,7 +65,7 @@ const MyToys = () => {
           name="animals"
           onChange={handleSortChange}
         >
-          <option disabled>Filter By Price</option>
+          <option>Filter By Price</option>
           <option value="ascending">Ascending</option>
           <option value="descending">Descending</option>
         </select>
