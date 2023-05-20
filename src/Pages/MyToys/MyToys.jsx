@@ -59,6 +59,16 @@ const MyToys = () => {
         My Toys
         <hr className="mt-5 mb-12 w-1/12 mx-auto bg-slate-500 h-1" />
       </div>
+      <div className="mb-5 flex justify-end">
+        <select
+          className="block px-3 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-52 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+          name="animals"
+        >
+          <option disabled>Filter By Price</option>
+          <option value="Ascending">Ascending </option>
+          <option value="Descending">Descending </option>
+        </select>
+      </div>
       <div className="overflow-x-auto">
         <table className="table w-full border rounded-xl">
           {/* head */}
@@ -83,7 +93,7 @@ const MyToys = () => {
                   <img
                     className="object-cover rounded-full h-12 w-12 "
                     src={toy.image}
-                    alt=""
+                    alt="Toy Car"
                   />
                 </td>
 

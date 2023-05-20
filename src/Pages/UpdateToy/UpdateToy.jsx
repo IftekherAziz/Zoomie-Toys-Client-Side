@@ -79,6 +79,7 @@ const UpdateToy = () => {
                   className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   placeholder="Toy Photo"
                   required
+                  readOnly
                 />
               </div>
             </div>
@@ -91,6 +92,7 @@ const UpdateToy = () => {
                   className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   placeholder="Toy Name"
                   required
+                  readOnly
                 />
               </div>
             </div>
@@ -145,6 +147,7 @@ const UpdateToy = () => {
                   className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   placeholder="Ratings"
                   required
+                  readOnly
                 />
               </div>
             </div>
@@ -168,11 +171,12 @@ const UpdateToy = () => {
                   name="subCategory"
                   defaultValue={subCategory}
                   required
+                  readOnly
                 >
                   <option disabled>Category</option>
-                  <option value="Sports Car">Sports Car</option>
-                  <option value="Truck">Truck</option>
-                  <option value="Regular Car">Regular Car</option>
+                  <option readOnly value="Sports Car">Sports Car</option>
+                  <option readOnly value="Truck">Truck</option>
+                  <option readOnly value="Regular Car">Regular Car</option>
                 </select>
               </div>
             </div>
