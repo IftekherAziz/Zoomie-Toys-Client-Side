@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
@@ -16,9 +17,7 @@ const AllToys = () => {
       <div className="text-center my-10 bg-zinc-100 p-10">
         <input
           className="border rounded py-3 px-20 text-center"
-          type="text"
-          value=""
-          onChange=""
+          type="text"        
           placeholder="Search by Toy Name"
         />
       </div>
@@ -38,15 +37,14 @@ const AllToys = () => {
           </thead>
           <tbody>
             {toys.map((toy) => (
-              <tr key={toy.id}>
+              <tr key={toy._id}>
                 <td className="font-medium">
                   {(toy.sellerName || "N/A").charAt(0).toUpperCase() +
                     (toy.sellerName || "N/A").slice(1)}
                 </td>
-
                 <td>
                   <img
-                    className="mx-auto object-cover rounded-full h-12 w-12 "
+                    className="object-cover rounded-full h-12 w-12 "
                     src={toy.image}
                     alt=""
                   />
@@ -59,8 +57,9 @@ const AllToys = () => {
                 <td>{toy.price}</td>
                 <td>{toy.availableQuantity}</td>
                 <td>
-                  {/* <button onClick={() => viewDetails(toy.id)}>View Details</button> */}
-                  <button className="btn btn-sm ">View Details</button>
+                  <Link to={`/viewDetails/${toy._id}`}>
+                    <button className="btn btn-sm ">View Details</button>
+                  </Link>
                 </td>
               </tr>
             ))}
