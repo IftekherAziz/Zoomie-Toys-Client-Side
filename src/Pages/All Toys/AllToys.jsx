@@ -13,11 +13,16 @@ const AllToys = () => {
   }, []);
 
   return (
-    <div>
-      <div className="text-center my-10 bg-zinc-100 p-10">
+    <div className="mb-20">
+      <div className="my-10  text-4xl font-bold text-center text-gray-800 dark:text-white">
+        All Toys
+        <hr className="mt-5 mb-12 w-1/12 mx-auto bg-slate-500 h-1" />
+      </div>
+
+      <div className="mb-5 flex justify-end">
         <input
-          className="border rounded py-3 px-20 text-center"
-          type="text"        
+          className="border  rounded py-3 px-10 text-center"
+          type="text"
           placeholder="Search by Toy Name"
         />
       </div>

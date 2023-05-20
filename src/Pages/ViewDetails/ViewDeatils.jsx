@@ -28,6 +28,7 @@ const ViewDeatils = () => {
         <div className="mx-auto max-w-5xl sm:text-center">
           <h2 className="text-3xl font-bold text-center tracking-tight text-gray-900 sm:text-4xl">
             {name}
+            <hr className="mt-5 mb-12 w-1/3 mx-auto bg-slate-500 h-1" />
           </h2>
         </div>
         <div className="mx-auto mt-16 max-w-2xl rounded-xl  bg-zinc-50 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">

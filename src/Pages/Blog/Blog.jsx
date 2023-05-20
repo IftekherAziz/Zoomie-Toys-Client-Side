@@ -1,11 +1,24 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Blog = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <div>
+    <div className="mb-20">
+      <div className="my-10  text-4xl font-bold text-center text-gray-800 dark:text-white">
+        Blog
+        <hr className="mt-5 mb-12 w-1/12 mx-auto bg-slate-500 h-1" />
+      </div>
       <div className="gap-8 sm:flex m-6">
         <div className="w-full px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/2 dark:bg-gray-800">
           <img
+            data-aos="fade-up"
             src="https://stytch.com/blog/wp-content/uploads/2022/01/How-a-refresh-token-is-generated-and-used-1.png"
-            alt=""
+            alt="Blog-Image"
           />
           <h4 className="py-4 text-xl font-semibold text-gray-700 sm:text-xl dark:text-white">
             What is an access token and refresh token? How do they work and
@@ -39,8 +52,9 @@ const Blog = () => {
         </div>
         <div className="w-full px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/2 dark:bg-gray-800">
           <img
+            data-aos="fade-up"
             src="https://i.ytimg.com/vi/QwevGzVu_zk/maxresdefault.jpg"
-            alt=""
+            alt="Blog-Image"
           />
           <h3 className="py-4 text-2xl font-semibold text-gray-700 sm:text-xl dark:text-white">
             Compare SQL and NoSQL databases?
@@ -75,8 +89,9 @@ const Blog = () => {
       <div className="gap-5 sm:flex m-6">
         <div className="w-full px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/2 dark:bg-gray-800">
           <img
+            data-aos="fade-up"
             src="https://procoders.tech/wp-content/uploads/2022/03/Express-JS-vs-Node-JS_-Why-its-Time-to-Migrate_-1.png"
-            alt=""
+            alt="Blog-Image"
           />
           <h4 className="py-4 text-xl font-semibold text-gray-700 sm:text-xl dark:text-white">
             What is express js? What is Nest JS?
@@ -115,8 +130,9 @@ const Blog = () => {
         </div>
         <div className="w-full px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/2 dark:bg-gray-800">
           <img
+            data-aos="fade-up"
             src="https://www.mongodb.com/community/forums/uploads/default/optimized/3X/c/a/ca7fef9976e34003f87553bf3f7b0f2d44abee0e_2_1024x512.png"
-            alt=""
+            alt="Blog-Image"
           />
           <h4 className="py-4 text-xl font-semibold text-gray-700 sm:text-xl dark:text-white">
             What is MongoDB aggregate and how does it work?

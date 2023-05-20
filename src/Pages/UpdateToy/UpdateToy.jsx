@@ -62,13 +62,13 @@ const UpdateToy = () => {
       });
   };
   return (
-    <div className="mb-20 mx-5">
+    <div className="mb-20 mt-10">
+      <div className="mb-5 text-4xl font-bold text-center text-gray-800 dark:text-white">
+        Update Toy
+        <hr className="mt-5 w-1/6 mx-auto bg-slate-500 h-1" />
+      </div>
       <form onSubmit={handleUpdateToy} className="flex w-full  space-x-3">
         <div className="w-full max-w-5xl px-5 py-20 m-auto mt-10 bg-stone-100 rounded-lg shadow dark:bg-gray-800">
-          <div className="mb-10 text-4xl font-bold text-center text-gray-800 dark:text-white">
-            Update Toy
-            <hr className="mt-5 mb-12 w-1/6 mx-auto bg-slate-500 h-1" />
-          </div>
           <div className="grid max-w-3xl grid-cols-2 gap-4 m-auto">
             <div className="col-span-2 lg:col-span-1">
               <div className=" relative ">
@@ -174,9 +174,15 @@ const UpdateToy = () => {
                   readOnly
                 >
                   <option disabled>Category</option>
-                  <option readOnly value="Sports Car">Sports Car</option>
-                  <option readOnly value="Truck">Truck</option>
-                  <option readOnly value="Regular Car">Regular Car</option>
+                  <option readOnly value="Sports Car">
+                    Sports Car
+                  </option>
+                  <option readOnly value="Truck">
+                    Truck
+                  </option>
+                  <option readOnly value="Regular Car">
+                    Regular Car
+                  </option>
                 </select>
               </div>
             </div>
