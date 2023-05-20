@@ -93,7 +93,7 @@ const MyToys = () => {
 
                 <td>{toy.availableQuantity}</td>
                 <td>
-                  <Link>
+                  <Link to={`/updateToy/${toy._id}`}>
                     <button>
                       {" "}
                       <FaRegEdit></FaRegEdit>

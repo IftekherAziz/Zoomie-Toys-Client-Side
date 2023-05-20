@@ -13,6 +13,7 @@ const ViewDeatils = () => {
        subCategory,
        availableQuantity,
      } = detailsData;
+     
   useEffect(() => {
     fetch(`http://localhost:5000/toy/${id}`)
       .then((res) => res.json())
