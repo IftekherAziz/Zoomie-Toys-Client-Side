@@ -115,7 +115,7 @@ const AddAToy = () => {
                   name="subCategory"
                   required
                 >
-                  <option value="">Select an option</option>
+                  <option value="Select an option">Select an option</option>
                   <option value="sports_car">Sports Car</option>
                   <option value="truck">Truck</option>
                   <option value="regular_car">Regular Car</option>
