@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
 
 const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
@@ -12,7 +15,9 @@ const MyToys = () => {
       // Fetch data from API
       fetch(`http://localhost:5000/myToys?email=${user.email}`)
         .then((res) => res.json())
-        .then((data) => setMyToys(data))
+        .then((data) => {
+          setMyToys(data);
+        })
         .catch((error) => console.error(error));
     },
     [user?.email],
@@ -20,23 +25,32 @@ const MyToys = () => {
   );
 
   const handleDelete = (id) => {
-    const procced = confirm("are you sure to delete?");
-    if (procced) {
-      fetch(`http://localhost:5000/myToy/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.deletedCount > 0) {
-            alert("deleted successful");
-            const remaining = myToys.filter(
-              (remainingToy) => remainingToy._id !== id
-            );
-            setMyToys(remaining);
-          }
-        });
-    }
+    fetch(`http://localhost:5000/myToy/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire("Deleted!", "Your toy has been deleted.", "success");
+            }
+          });
+          const remaining = myToys.filter(
+            (remainingToy) => remainingToy._id !== id
+          );
+          setMyToys(remaining);
+        }
+      });
   };
 
   return (
@@ -58,6 +72,7 @@ const MyToys = () => {
               <th>Available</th>
               <th>Update</th>
               <th>Delete</th>
+              <th>Deatils</th>
             </tr>
           </thead>
           <tbody>
@@ -79,23 +94,29 @@ const MyToys = () => {
                 <td>{toy.availableQuantity}</td>
                 <td>
                   <Link>
-                    <button className="btn btn-sm">Update</button>
+                    <button>
+                      {" "}
+                      <FaRegEdit></FaRegEdit>
+                    </button>
                   </Link>
                 </td>
                 <td>
                   <Link>
-                    <button
-                      onClick={() => handleDelete(toy._id)}
-                      className="btn btn-sm"
-                    >
-                      Delete
+                    <button onClick={() => handleDelete(toy._id)}>
+                      <FaTrashAlt></FaTrashAlt>
                     </button>
+                  </Link>
+                </td>
+                <td>
+                  <Link to={`/viewDetails/${toy._id}`}>
+                    <button className="btn btn-sm ">Details</button>
                   </Link>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+        <div id="toastContainer"></div>
       </div>
     </div>
   );

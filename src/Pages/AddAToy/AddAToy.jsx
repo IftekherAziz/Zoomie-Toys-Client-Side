@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
-import 'sweetalert2/dist/sweetalert2.min.css';
+import "sweetalert2/dist/sweetalert2.min.css";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
@@ -9,7 +9,7 @@ const AddAToy = () => {
   const handleAddToy = (event) => {
     event.preventDefault();
     const form = event.target;
-    
+
     const name = form.name.value;
     const availableQuantity = form.availableQuantity.value;
     const sellerName = user?.displayName;
@@ -49,8 +49,8 @@ const AddAToy = () => {
           title: "Product submitted successfully!",
           showConfirmButton: true,
           timer: 5000,
-        }); 
-        form.reset();       
+        });
+        form.reset();
       });
   };
 
@@ -109,20 +109,7 @@ const AddAToy = () => {
                 />
               </div>
             </div>
-            <div className="col-span-2 lg:col-span-1">
-              <div className=" relative ">
-                <select
-                  className="block px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-full focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-                  name="subCategory"
-                  required
-                >
-                  <option value="Select an option">Select an option</option>
-                  <option value="sports_car">Sports Car</option>
-                  <option value="truck">Truck</option>
-                  <option value="regular_car">Regular Car</option>
-                </select>
-              </div>
-            </div>
+
             <div className="col-span-2 lg:col-span-1">
               <div className=" relative ">
                 <input
@@ -162,7 +149,20 @@ const AddAToy = () => {
                 />
               </div>
             </div>
-
+            <div className="col-span-2 lg:col-span-1">
+              <div className=" relative ">
+                <select
+                  className="block px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-full focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                  name="subCategory"
+                  required
+                >
+                  <option disabled>Category</option>
+                  <option value="Sports Car">Sports Car</option>
+                  <option value="Truck">Truck</option>
+                  <option value="Regular Car">Regular Car</option>
+                </select>
+              </div>
+            </div>
             <div className="col-span-2">
               <label className="text-gray-700">
                 <textarea
@@ -177,7 +177,7 @@ const AddAToy = () => {
             </div>
             <div className="col-span-2 text-right">
               <button type="submit" className="btn btn-block">
-                Add Now
+                Add A Toy
               </button>
             </div>
           </div>
