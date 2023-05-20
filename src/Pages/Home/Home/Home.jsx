@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import CategoryTab from "../CategoryTab/CategoryTab";
+// import Contact from "../Contact/Contact";
 import Gallery from "../Gallery/Gallery";
 
 
@@ -8,7 +9,7 @@ const Home = () => {
         <div>
            <Banner></Banner>
            <Gallery></Gallery>
-           <CategoryTab></CategoryTab>
+           <CategoryTab></CategoryTab>          
         </div>
     );
 };
