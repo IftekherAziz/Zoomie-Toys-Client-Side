@@ -3,14 +3,27 @@ import { Link } from "react-router-dom";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredToys, setFilteredToys] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/toys")
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
+        setFilteredToys(data);
       });
   }, []);
+
+  const handleSearchQueryChange = (event) => {
+    const { value } = event.target;
+    setSearchQuery(value);
+
+    const filteredToys = toys.filter((toy) =>
+      toy.name.toLowerCase().includes(value.toLowerCase())
+    );
+    setFilteredToys(filteredToys);
+  };
 
   return (
     <div className="mb-20">
@@ -21,9 +34,11 @@ const AllToys = () => {
 
       <div className="mb-5 flex justify-end">
         <input
-          className="border  rounded py-3 px-10 text-center"
+          className="border rounded py-3 px-10 text-center"
           type="text"
           placeholder="Search by Toy Name"
+          value={searchQuery}
+          onChange={handleSearchQueryChange}
         />
       </div>
       <div className="overflow-x-auto">
@@ -41,7 +56,7 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {toys.map((toy) => (
+            {filteredToys.map((toy) => (
               <tr key={toy._id}>
                 <td className="font-medium">
                   {(toy.sellerName || "N/A").charAt(0).toUpperCase() +
