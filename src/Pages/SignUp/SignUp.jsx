@@ -6,7 +6,8 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 
 const SignUp = () => {
-  const { createUser, googleSignIn, profileUpdate } = useContext(AuthContext);
+  const { createUser, googleSignIn, profileUpdate, logOut } =
+    useContext(AuthContext);
 
   const [errorMessage, setErrorMessage] = useState(null);
 
@@ -41,6 +42,7 @@ const SignUp = () => {
         const user = result.user;
         console.log(user);
         profileUpdate(name, photo);
+        logOut();
         navigate("/login");
       })
       .catch((error) => setErrorMessage(error));
@@ -114,7 +116,7 @@ const SignUp = () => {
                   name="photo"
                   placeholder="PhotoURL"
                   className="input input-bordered"
-                  required
+                  // required
                 />
               </div>
               {errorMessage && (
