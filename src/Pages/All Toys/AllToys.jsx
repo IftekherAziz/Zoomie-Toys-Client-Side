@@ -1,11 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import DynamicTitle from "../../Utilities/DynamicTitle";
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredToys, setFilteredToys] = useState([]);
+
+  const { user } = useContext(AuthContext);
 
   // Dynamic Title:
   DynamicTitle("All Toys");
@@ -55,7 +60,7 @@ const AllToys = () => {
               <th>Seller Name</th>
               <th>Photo</th>
               <th>Toy Name</th>
-              <th>Sub-category</th>
+              <th>Category</th>
               <th>Price</th>
               <th>Available</th>
               <th>View Details</th>
@@ -83,9 +88,24 @@ const AllToys = () => {
                 <td>{toy.price}</td>
                 <td>{toy.availableQuantity}</td>
                 <td>
-                  <Link to={`/viewDetails/${toy._id}`}>
-                    <button className="btn btn-sm ">View Details</button>
-                  </Link>
+                  {/* <button className="btn btn-sm ">Details</button> */}
+                  <button
+                    className="btn btn-sm"
+                    onClick={() => {
+                      if (!user) {
+                        // Show success SweetAlert notification
+                        Swal.fire({
+                          title: "Access Denied",
+                          text: "Please login to view this page.",
+                          icon: "error",
+                          confirmButtonText: "OK",
+                          timer: 10000,
+                        });
+                      }
+                    }}
+                  >
+                    <Link to={`/viewDetails/${toy._id}`}> Details</Link>
+                  </button>
                 </td>
               </tr>
             ))}
