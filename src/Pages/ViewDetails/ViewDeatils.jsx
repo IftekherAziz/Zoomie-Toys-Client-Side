@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import DynamicTitle from "../../Utilities/DynamicTitle";
+import { Rating } from "@smastrom/react-rating";
 
 const ViewDeatils = () => {
   // Dynamic Title:
@@ -17,6 +18,9 @@ const ViewDeatils = () => {
     subCategory,
     availableQuantity,
   } = detailsData;
+
+  // Ratings State:
+  // const [ratings] = useState();
 
   useEffect(() => {
     fetch(
@@ -61,7 +65,13 @@ const ViewDeatils = () => {
               </li>
               <li className="flex gap-x-3">
                 <b>Rating:</b>
-                {rating}
+                <p>
+                  <Rating
+                    style={{ maxWidth: 100 }}
+                    value={rating}
+                    readOnly
+                  ></Rating>
+                </p>
               </li>
               <li className="flex gap-x-3">
                 <b>Category:</b>
