@@ -20,7 +20,7 @@ const Testimonial = () => {
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-xl">
             <div className="flex items-center justify-center px-5 py-5">
-              <div className="w-full px-5 pt-5 pb-10 mx-auto text-gray-800 bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:text-gray-50">
+              <div className="w-full px-5 pt-5 pb-10 mx-auto text-gray-800 bg-white rounded-lg shadow-lg">
                 <div className="w-full pt-1 pb-5 mx-auto -mt-16 text-center">
                   <a className="relative block">
                     <img
@@ -36,7 +36,7 @@ const Testimonial = () => {
                   <div className="h-3 text-3xl leading-tight text-left text-indigo-500">
                     “
                   </div>
-                  <p className="px-5 text-sm text-center text-gray-600 dark:text-gray-100">
+                  <p className="px-5 text-sm text-center text-gray-600 ">
                     To all our valued customers and sellers, thank you for
                     choosing Zoomie Toys, where imagination and play come alive!
                     Explore our wide range of sports cars, regular cars, and
@@ -50,7 +50,7 @@ const Testimonial = () => {
                   <p className="font-bold text-center text-indigo-500 text-md">
                     Iftekher Aziz
                   </p>
-                  <p className="text-xs text-center text-gray-500 dark:text-gray-300">
+                  <p className="text-xs text-center text-gray-500 ">
                     @Iftekheraziz
                   </p>
                 </div>

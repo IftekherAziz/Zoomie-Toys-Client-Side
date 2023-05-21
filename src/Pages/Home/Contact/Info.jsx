@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 const Info = () => {
   return (
     <div className="mt-20 mb-20">
-      <div className="container p-4 mx-auto bg-white max-w-7xl sm:p-6 lg:p-8 dark:bg-gray-800">
+      <div className="container p-4 mx-auto bg-white max-w-7xl sm:p-6 lg:p-8">
         <div className="flex flex-wrap">
           <div className="w-full px-8 lg:w-1/2">
             <div className="pb-12 mb-12 border-b lg:mb-0 lg:pb-0 lg:border-b-0">
-              <h2 className="mb-4 text-3xl font-bold lg:text-4xl font-heading dark:text-white">
+              <h2 className="mb-4 text-3xl font-bold lg:text-4xl font-heading ">
                 Fostering Trust and Collaboration at Zoomie Toys!
               </h2>
-              <p className="my-8 text-justify leading-loose text-gray-500 dark:text-gray-300">
+              <p className="my-8 text-justify leading-loose text-gray-500 ">
                 At Zoomie Toys, we prioritize fostering trust and collaboration
                 between our valued customers and vendors. We believe in creating
                 a vibrant marketplace that promotes open communication,
@@ -45,10 +45,10 @@ const Info = () => {
                   </span>
                 </div>
                 <div className="px-4">
-                  <h3 className="my-4 text-xl font-semibold dark:text-white">
+                  <h3 className="my-4 text-xl font-semibold ">
                     Quality Product
                   </h3>
-                  <p className="leading-loose text-gray-500 dark:text-gray-300">
+                  <p className="leading-loose text-gray-500 ">
                     Discover excellence in every detail with our meticulously
                     crafted, high-quality products that redefine standards``
                   </p>
@@ -61,10 +61,10 @@ const Info = () => {
                   </span>
                 </div>
                 <div className="px-4">
-                  <h3 className="my-4 text-xl font-semibold dark:text-white">
+                  <h3 className="my-4 text-xl font-semibold ">
                     Shipping and Returns
                   </h3>
-                  <p className="leading-loose text-gray-500 dark:text-gray-300">
+                  <p className="leading-loose text-gray-500 ">
                     Enjoy seamless shipping and stress-free returns, making your
                     shopping experience convenient and worry-free from start to
                     finish.
@@ -78,10 +78,10 @@ const Info = () => {
                   </span>
                 </div>
                 <div className="px-4">
-                  <h3 className="my-4 text-xl font-semibold dark:text-white">
+                  <h3 className="my-4 text-xl font-semibold ">
                     Become a Seller
                   </h3>
-                  <p className="leading-loose text-gray-500 dark:text-gray-300">
+                  <p className="leading-loose text-gray-500 ">
                     Unlock your entrepreneurial potential and join our vibrant
                     marketplace as a seller, showcasing your products to a
                     global audience.

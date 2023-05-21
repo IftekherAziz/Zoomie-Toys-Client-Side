@@ -13,7 +13,7 @@ const TabCard = ({ toy }) => {
     <div className="card w-full bg-base-100 shadow-md border relative group overflow-hidden">
       <figure>
         <img
-          className=" h-[320px] w-full transition-transform duration-300 transform-gpu group-hover:scale-105"
+          className=" h-[320px] sm:h-[250px] w-full transition-transform duration-300 transform-gpu group-hover:scale-105"
           src={image}
           alt="Toys Car"
         />

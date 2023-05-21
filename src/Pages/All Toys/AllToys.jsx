@@ -38,7 +38,7 @@ const AllToys = () => {
 
   return (
     <div className="mb-20  mx-5">
-      <div className="my-10  text-4xl font-bold text-center text-gray-800 dark:text-white">
+      <div className="my-10  text-4xl font-bold text-center text-gray-800 ">
         All Toys
         <hr className="mt-5 mb-12 w-1/12 mx-auto bg-slate-500 h-1" />
       </div>

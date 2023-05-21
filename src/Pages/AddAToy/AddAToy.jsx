@@ -62,13 +62,13 @@ const AddAToy = () => {
 
   return (
     <div>
-      <div className="my-10 text-4xl font-bold text-center text-gray-800 dark:text-white">
+      <div className="my-10 text-4xl font-bold text-center text-gray-800">
         Add New Toy
         <hr className="mt-5 mb-10 w-1/6 mx-auto bg-slate-500 h-1" />
       </div>
       <div className="mb-20 mx-5">
         <form onSubmit={handleAddToy} className="flex w-full  space-x-3">
-          <div className="w-full max-w-5xl px-5 py-20 m-auto mt-5 bg-white rounded-lg shadow-lg border dark:bg-gray-800">
+          <div className="w-full max-w-5xl px-5 py-20 m-auto mt-5 bg-white rounded-lg shadow-lg border">
             <div className="grid max-w-3xl grid-cols-2 gap-4 m-auto">
               <div className="col-span-2 lg:col-span-1">
                 <div className=" relative ">

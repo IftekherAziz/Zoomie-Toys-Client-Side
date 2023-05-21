@@ -63,7 +63,7 @@ const MyToys = () => {
 
   return (
     <div className="mt-10 mb-20 mx-5">
-      <div className="mb-10 text-4xl font-bold text-center text-gray-800 dark:text-white">
+      <div className="mb-10 text-4xl font-bold text-center text-gray-800 ">
         My Toys
         <hr className="mt-5 mb-12 w-1/12 mx-auto bg-slate-500 h-1" />
       </div>

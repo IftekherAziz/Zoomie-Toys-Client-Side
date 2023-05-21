@@ -17,8 +17,7 @@ const Subscribe = () => {
             </h1>
             <p className="mb-5">
               Want to hear from us when we add new toys? Sign up for our
-              newsletter and we'll email you every time we release a new batch
-              of toy.
+              newsletter and we'll email you every time we release a new toy.
             </p>
 
             <div className="flex justify-center">
