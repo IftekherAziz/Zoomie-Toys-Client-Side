@@ -4,7 +4,7 @@ import DynamicTitle from "../../Utilities/DynamicTitle";
 import { Rating } from "@smastrom/react-rating";
 
 const ViewDeatils = () => {
-  // Dynamic Title:
+
   DynamicTitle("Toy Details");
 
   const { id } = useParams();
@@ -17,10 +17,10 @@ const ViewDeatils = () => {
     rating,
     subCategory,
     availableQuantity,
+    sellerEmail,
+    sellerName,
   } = detailsData;
 
-  // Ratings State:
-  // const [ratings] = useState();
 
   useEffect(() => {
     fetch(
@@ -28,7 +28,6 @@ const ViewDeatils = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         setDetailsData(data);
       });
   }, [id]);
@@ -38,8 +37,8 @@ const ViewDeatils = () => {
         <div className="mx-auto max-w-5xl sm:text-center">
           <h2 className="text-3xl font-bold text-center tracking-tight text-gray-900 sm:text-4xl">
             {name}
-            <hr className="mt-5 mb-12 w-1/3 mx-auto bg-slate-500 h-1" />
           </h2>
+          <hr className="mt-5 mb-12 w-1/3 mx-auto bg-slate-500 h-1" />
         </div>
         <div className="mx-auto mt-16 max-w-2xl rounded-xl  bg-zinc-50 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
           <div className="p-8 sm:p-10 lg:flex-auto">
@@ -65,21 +64,29 @@ const ViewDeatils = () => {
               </li>
               <li className="flex gap-x-3">
                 <b>Rating:</b>
-                <p>
+                <div>
                   <Rating
                     style={{ maxWidth: 100 }}
                     value={rating}
                     readOnly
                   ></Rating>
-                </p>
+                </div>
               </li>
               <li className="flex gap-x-3">
                 <b>Category:</b>
                 {subCategory}
               </li>
               <li className="flex gap-x-3">
-                <b>In Stock:</b>
+                <b>Available Quantity:</b>
                 {availableQuantity}
+              </li>
+              <li className="flex gap-x-3">
+                <b>Seller Name: </b>
+                {sellerName}
+              </li>
+              <li className="flex gap-x-3">
+                <b>Seller Email: </b>
+                {sellerEmail}
               </li>
             </ul>
             <div className="mt-12 text-center">
