@@ -1,13 +1,31 @@
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { useContext } from "react";
 import { Rating } from "@smastrom/react-rating";
+import { useNavigate } from "react-router-dom";
 
 const TabCard = ({ toy }) => {
   const { user } = useContext(AuthContext);
   const { _id, image, name, price, rating } = toy;
+
+    const navigate = useNavigate();
+
+  const handleDetails = (id) => {
+    if (!user) {
+      Swal.fire({
+        icon: "error",
+        title: "Access Denied",
+        text: "Please Login to View Details!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate(`/viewDetails/${id}`);
+        }
+      });
+    } else {
+      navigate(`/viewDetails/${id}`);
+    }
+  };
 
   return (
     <div className="card w-full bg-base-100 shadow-md border relative group overflow-hidden">
@@ -28,25 +46,9 @@ const TabCard = ({ toy }) => {
           <Rating style={{ maxWidth: 100 }} value={rating} readOnly></Rating>
         </p>
         <div className="mt-3">
-          <Link to={`/viewDetails/${_id}`}>
-            <button
-              className="btn btn-block"
-              onClick={() => {
-                if (!user) {
-                  // Show success SweetAlert notification
-                  Swal.fire({
-                    title: "Access Denied",
-                    text: "Please login to view this page.",
-                    icon: "error",
-                    confirmButtonText: "OK",
-                    timer: 10000,
-                  });
-                }
-              }}
-            >
-              View Details
-            </button>
-          </Link>
+          <button className="btn btn-sm" onClick={() => handleDetails(_id)}>
+            Details
+          </button>
         </div>
       </div>
     </div>

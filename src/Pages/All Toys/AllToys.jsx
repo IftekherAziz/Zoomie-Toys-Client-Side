@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import DynamicTitle from "../../Utilities/DynamicTitle";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
@@ -9,6 +9,7 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredToys, setFilteredToys] = useState([]);
+  const navigate = useNavigate();
 
   const { user } = useContext(AuthContext);
 
@@ -34,6 +35,22 @@ const AllToys = () => {
       toy.name.toLowerCase().includes(value.toLowerCase())
     );
     setFilteredToys(filteredToys);
+  };
+
+  const handleDetails = (id) => {
+    if (!user) {
+      Swal.fire({
+        icon: "error",
+        title: "Access Denied",
+        text: "Please Login to View Details!",
+      }).then((result) => {        
+        if (result.isConfirmed) {
+          navigate(`/viewDetails/${id}`);
+        }
+      });
+    } else {
+      navigate(`/viewDetails/${id}`);
+    }
   };
 
   return (
@@ -87,24 +104,12 @@ const AllToys = () => {
                 </td>
                 <td>{toy.price}</td>
                 <td>{toy.availableQuantity}</td>
-                <td>
-                  {/* <button className="btn btn-sm ">Details</button> */}
+                <td>              
                   <button
                     className="btn btn-sm"
-                    onClick={() => {
-                      if (!user) {
-                        // Show success SweetAlert notification
-                        Swal.fire({
-                          title: "Access Denied",
-                          text: "Please login to view this page.",
-                          icon: "error",
-                          confirmButtonText: "OK",
-                          timer: 10000,
-                        });
-                      }
-                    }}
+                    onClick={() => handleDetails(toy._id)}
                   >
-                    <Link to={`/viewDetails/${toy._id}`}> Details</Link>
+                    Details
                   </button>
                 </td>
               </tr>
