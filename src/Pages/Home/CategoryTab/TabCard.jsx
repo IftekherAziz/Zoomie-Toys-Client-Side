@@ -42,9 +42,9 @@ const TabCard = ({ toy }) => {
           <b>Price:</b>{" "}
           <span className="text-red-600 font-medium"> ${price}</span>
         </p>
-        <p>
+        <div>
           <Rating style={{ maxWidth: 100 }} value={rating} readOnly></Rating>
-        </p>
+        </div>
         <div className="mt-3">
           <button className="btn btn-sm" onClick={() => handleDetails(_id)}>
             Details

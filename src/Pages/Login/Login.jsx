@@ -85,19 +85,19 @@ const Login = () => {
                 />
               </div>
               {errorMessage && (
-                <div className="border border-blue-600 rounded-lg w-2/3 mx-auto text text-red-600 m-2 ">
+                <div className="border border-gray-300 rounded-md w-full mt-3 mx-auto text text-red-600 m-2 ">
                   {!errorMessage ? (
                     ""
                   ) : errorMessage ===
                     "Firebase: Error (auth/wrong-password)." ? (
-                    <p>Wrong password. Please try again.</p>
+                    <p className="p-3">Wrong password. Please try again.</p>
                   ) : errorMessage ===
                     "Firebase: Error (auth/user-not-found)." ? (
-                    <p>
+                    <p className="p-3">
                       User not found. Please check your email and try again.
                     </p>
                   ) : (
-                    <p>An error occurred. Please try again later</p>
+                    <p className="p-3">An error occurred. Email and password not matched.</p>
                   )}
                 </div>
               )}
