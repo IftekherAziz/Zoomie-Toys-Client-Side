@@ -4,6 +4,7 @@ import CategoryTab from "../CategoryTab/CategoryTab";
 import Info from "../Contact/Info";
 import Gallery from "../Gallery/Gallery";
 import Subscribe from "../Subscribe/Subscribe";
+import Testimonial from "../Testimonial/Testimonial";
 
 const Home = () => {
   // Dynamic Title:
@@ -14,6 +15,7 @@ const Home = () => {
       <Banner></Banner>
       <Gallery></Gallery>
       <CategoryTab></CategoryTab>
+      <Testimonial></Testimonial>
       <Info></Info>
       <Subscribe></Subscribe>
     </div>
