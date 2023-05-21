@@ -26,7 +26,7 @@ const Testimonial = () => {
                     <img
                       alt="profil"
                       data-aos="zoom-in"
-                      src="https://www.tailwind-kit.com/images/person/1.jpg"
+                      src="https://i.ibb.co/DghgDDw/aziz.jpg"
                       className="mx-auto object-cover rounded-full h-20 w-20 "
                     />
                   </a>

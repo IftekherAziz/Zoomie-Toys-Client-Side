@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import DynamicTitle from "../../Utilities/DynamicTitle";
 import { Rating } from "@smastrom/react-rating";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ViewDeatils = () => {
 
@@ -31,6 +33,11 @@ const ViewDeatils = () => {
         setDetailsData(data);
       });
   }, [id]);
+
+   useEffect(() => {
+     AOS.init();
+   }, []);
+
   return (
     <div className="bg-white py-10 sm:pb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -98,7 +105,7 @@ const ViewDeatils = () => {
           <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
             <div className="rounded-2xl bg-white border m-4 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
               <div className=" px-8">
-                <img src={image} alt="Toy Image" />
+                <img data-aos="fade-up"  src={image} alt="Toy Image" />
               </div>
             </div>
           </div>
