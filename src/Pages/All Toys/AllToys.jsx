@@ -32,7 +32,7 @@ const AllToys = () => {
   };
 
   return (
-    <div className="mb-20">
+    <div className="mb-20  mx-5">
       <div className="my-10  text-4xl font-bold text-center text-gray-800 dark:text-white">
         All Toys
         <hr className="mt-5 mb-12 w-1/12 mx-auto bg-slate-500 h-1" />
@@ -47,8 +47,8 @@ const AllToys = () => {
           onChange={handleSearchQueryChange}
         />
       </div>
-      <div className="overflow-x-auto">
-        <table className="table w-full border rounded-xl">
+      <div className="overflow-x-auto border rounded-lg">
+        <table className="table w-full ">
           {/* head */}
           <thead>
             <tr>

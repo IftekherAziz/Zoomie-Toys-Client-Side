@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Header = () => {
@@ -17,26 +17,26 @@ const Header = () => {
   const items = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <Link to="/alltoys">All Toys</Link>
+        <NavLink to="/alltoys">All Toys</NavLink>
       </li>
       <li>
-        <Link to="/blog">Blogs</Link>
+        <NavLink to="/blog">Blogs</NavLink>
       </li>
       <li>
         {user && (
-          <Link to="/addtoy">
+          <NavLink to="/addtoy">
             <button>Add A Toy</button>
-          </Link>
+          </NavLink>
         )}
       </li>
       <li>
         {user && (
-          <Link to="/mytoy">
+          <NavLink to="/mytoy">
             <button>My Toys</button>
-          </Link>
+          </NavLink>
         )}
       </li>
     </>
