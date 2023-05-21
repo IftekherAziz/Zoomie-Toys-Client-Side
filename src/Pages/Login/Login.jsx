@@ -1,16 +1,23 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import login from "../../assets/animation/login.json";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import DynamicTitle from "../../Utilities/DynamicTitle";
 
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
-
   const [errorMessage, setErrorMessage] = useState(null);
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+   const from = location.state?.from?.pathname || "/";
+
+
+  // Dynamic Title:
+  DynamicTitle("Login");
 
   // Email Login:
   const handleLogin = (event) => {
@@ -20,12 +27,12 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-
     signIn(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate("/");
+         navigate(from, { replace: true });
+        
       })
       .catch((error) => setErrorMessage(error));
   };
@@ -36,7 +43,7 @@ const Login = () => {
       .then((result) => {
         const googleLoggedUser = result.user;
         console.log(googleLoggedUser);
-        navigate("/");
+       navigate(navigate(from, { replace: true }));
       })
       .catch((error) => {
         console.log(error);

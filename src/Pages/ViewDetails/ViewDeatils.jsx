@@ -1,21 +1,27 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import DynamicTitle from "../../Utilities/DynamicTitle";
 
 const ViewDeatils = () => {
-     const { id } = useParams();
-     const [detailsData, setDetailsData] = useState({});
-     const {
-       image,
-       name,
-       description,
-       price,
-       rating,
-       subCategory,
-       availableQuantity,
-     } = detailsData;
-     
+  // Dynamic Title:
+  DynamicTitle("Toy Details");
+
+  const { id } = useParams();
+  const [detailsData, setDetailsData] = useState({});
+  const {
+    image,
+    name,
+    description,
+    price,
+    rating,
+    subCategory,
+    availableQuantity,
+  } = detailsData;
+
   useEffect(() => {
-    fetch(`http://localhost:5000/toy/${id}`)
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-iftekher-aziz.vercel.app/toy/${id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -8,7 +8,9 @@ const CategoryTab = () => {
      const [categories, setCategories] = useState("Sports Car");
      useEffect(() => {
        // Fetch data from API
-       fetch(`http://localhost:5000/toys/${categories}`)
+       fetch(
+         `https://b7a11-toy-marketplace-server-side-iftekher-aziz.vercel.app/toys/${categories}`
+       )
          .then((res) => res.json())
          .then((data) => setToys(data))
          .catch((error) => console.error(error));

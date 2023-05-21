@@ -88,7 +88,7 @@ const Header = () => {
               <li className="list-none">
                 {user ? (
                   <button className="btn  rounded mr-4" onClick={handleLogOut}>
-                    LogOut
+                    <Link >LogOut</Link>
                   </button>
                 ) : (
                   <Link to="/login">

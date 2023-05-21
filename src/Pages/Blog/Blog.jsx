@@ -1,8 +1,12 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import DynamicTitle from "../../Utilities/DynamicTitle";
 
 const Blog = () => {
+  // Dynamic Title:
+  DynamicTitle("Blog");
+
   useEffect(() => {
     AOS.init();
   }, []);

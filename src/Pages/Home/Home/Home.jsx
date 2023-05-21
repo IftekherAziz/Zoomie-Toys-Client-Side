@@ -1,3 +1,4 @@
+import DynamicTitle from "../../../Utilities/DynamicTitle";
 import Banner from "../Banner/Banner";
 import CategoryTab from "../CategoryTab/CategoryTab";
 import Info from "../Contact/Info";
@@ -5,6 +6,9 @@ import Gallery from "../Gallery/Gallery";
 import Subscribe from "../Subscribe/Subscribe";
 
 const Home = () => {
+  // Dynamic Title:
+  DynamicTitle("Home");
+
   return (
     <div>
       <Banner></Banner>

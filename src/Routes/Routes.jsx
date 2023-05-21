@@ -40,16 +40,31 @@ const router = createBrowserRouter([
       },
       {
         path: "/addtoy",
-        element: <AddAToy></AddAToy>,
+        element: (
+          <PrivateRoute>
+            <AddAToy></AddAToy>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/mytoy",
-        element: <MyToys></MyToys>,
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/updateToy/:id",
-        element: <UpdateToy></UpdateToy>,
-        loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <UpdateToy></UpdateToy>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://b7a11-toy-marketplace-server-side-iftekher-aziz.vercel.app/toy/${params.id}`
+          ),
       },
       {
         path: "/login",

@@ -1,13 +1,19 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import DynamicTitle from "../../Utilities/DynamicTitle";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredToys, setFilteredToys] = useState([]);
 
+  // Dynamic Title:
+  DynamicTitle("All Toys");
+
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch(
+      "https://b7a11-toy-marketplace-server-side-iftekher-aziz.vercel.app/toys"
+    )
       .then((res) => res.json())
       .then((data) => {
         setToys(data);

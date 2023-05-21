@@ -4,15 +4,20 @@ import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
+import DynamicTitle from "../../Utilities/DynamicTitle";
 
 const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
   const [sortOrder, setSortOrder] = useState("");
-
   const { user } = useContext(AuthContext);
 
+  // Dynamic Title:
+  DynamicTitle("My Toys");
+
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys?email=${user.email}&sort=${sortOrder}`)
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-iftekher-aziz.vercel.app/myToys?email=${user.email}&sort=${sortOrder}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
@@ -21,9 +26,12 @@ const MyToys = () => {
   }, [user?.email, sortOrder]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/myToy/${id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-iftekher-aziz.vercel.app/myToy/${id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

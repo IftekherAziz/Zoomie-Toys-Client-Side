@@ -2,9 +2,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
+import DynamicTitle from "../../Utilities/DynamicTitle";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
+  
+  // Dynamic Title
+  DynamicTitle('Add A Toy');
 
   const handleAddToy = (event) => {
     event.preventDefault();
@@ -33,13 +37,16 @@ const AddAToy = () => {
     };
     // console.log(addToyObj);
 
-    fetch("http://localhost:5000/addToy", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(addToyObj),
-    })
+    fetch(
+      "https://b7a11-toy-marketplace-server-side-iftekher-aziz.vercel.app/addToy",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addToyObj),
+      }
+    )
       .then((res) => res.json())
       .then(() => {
         // Show success SweetAlert notification

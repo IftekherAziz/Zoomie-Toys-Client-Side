@@ -4,14 +4,17 @@ import signup from "../../assets/animation/signup.json";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import DynamicTitle from "../../Utilities/DynamicTitle";
 
 const SignUp = () => {
   const { createUser, googleSignIn, profileUpdate, logOut } =
     useContext(AuthContext);
 
   const [errorMessage, setErrorMessage] = useState(null);
-
   const navigate = useNavigate();
+
+  // Dynamic Title:
+  DynamicTitle("Sign Up");
 
   // Email Signup:
   const handleSignUp = (event) => {

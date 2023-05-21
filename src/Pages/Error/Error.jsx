@@ -1,13 +1,17 @@
 import { Link, useRouteError } from "react-router-dom";
+import DynamicTitle from "../../Utilities/DynamicTitle";
 
 
 const Error = () => {
+  // Dynamic Title:
+  DynamicTitle("404 Error");
+  
   const { error, status } = useRouteError();
   return (
     <>
       <section className="flex items-center h-screen p-16 bg-white">
         <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-           {/* <svg
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
             className="w-40 h-40 text_color"

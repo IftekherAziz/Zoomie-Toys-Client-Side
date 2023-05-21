@@ -3,8 +3,11 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
+import DynamicTitle from "../../Utilities/DynamicTitle";
 
 const UpdateToy = () => {
+  // Dynamic Title:
+  DynamicTitle("Update Toy");
   const {
     name,
     availableQuantity,
@@ -43,13 +46,16 @@ const UpdateToy = () => {
     };
     // console.log(addToyObj);
 
-    fetch(`http://localhost:5000/myUpdatedToy/${id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(addToyObj),
-    })
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-iftekher-aziz.vercel.app/myUpdatedToy/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addToyObj),
+      }
+    )
       .then((res) => res.json())
       .then(() => {
         // Show success SweetAlert notification
@@ -171,6 +177,7 @@ const UpdateToy = () => {
                   name="subCategory"
                   defaultValue={subCategory}
                   required
+                  disabled
                   readOnly
                 >
                   <option disabled>Category</option>

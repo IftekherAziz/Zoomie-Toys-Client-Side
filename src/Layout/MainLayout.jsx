@@ -6,11 +6,10 @@ import { AuthContext } from "../Providers/AuthProvider";
 import Loading from "./Loading";
 
 const MainLayout = () => {
-  const { user } = useContext(AuthContext);
+  const { loading } = useContext(AuthContext);
 
-  if (!user) {
+  if (loading) {
     return <Loading></Loading>;
-    
   }
 
   return (
