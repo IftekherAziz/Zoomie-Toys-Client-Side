@@ -87,12 +87,12 @@ const Header = () => {
             <div>
               <li className="list-none">
                 {user ? (
-                  <button className="btn  rounded mr-4" onClick={handleLogOut}>
+                  <button className="btn btn-primary  rounded mr-4" onClick={handleLogOut}>
                     <Link >LogOut</Link>
                   </button>
                 ) : (
                   <Link to="/login">
-                    <button className="btn rounded mr-4">Login</button>
+                    <button className="btn btn-primary rounded mr-4">Login</button>
                   </Link>
                 )}
               </li>

@@ -68,14 +68,14 @@ const AddAToy = () => {
       </div>
       <div className="mb-20 mx-5">
         <form onSubmit={handleAddToy} className="flex w-full  space-x-3">
-          <div className="w-full max-w-5xl px-5 py-20 m-auto mt-5 bg-stone-100 rounded-lg shadow dark:bg-gray-800">
+          <div className="w-full max-w-5xl px-5 py-20 m-auto mt-5 bg-white rounded-lg shadow-lg border dark:bg-gray-800">
             <div className="grid max-w-3xl grid-cols-2 gap-4 m-auto">
               <div className="col-span-2 lg:col-span-1">
                 <div className=" relative ">
                   <input
                     type="text"
                     name="image"
-                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-purple-50 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Toy Photo"
                     required
                   />
@@ -86,7 +86,7 @@ const AddAToy = () => {
                   <input
                     type="text"
                     name="name"
-                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-purple-50 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Toy Name"
                     required
                   />
@@ -98,7 +98,7 @@ const AddAToy = () => {
                     type="text"
                     name="selsellerName"
                     defaultValue={user?.displayName}
-                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-purple-50 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Seller Name"
                     readOnly
                   />
@@ -110,7 +110,7 @@ const AddAToy = () => {
                     type="text"
                     name="email"
                     defaultValue={user?.email}
-                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-purple-50 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Seller Email"
                     readOnly
                   />
@@ -123,7 +123,7 @@ const AddAToy = () => {
                     type="number"
                     step="any"
                     name="price"
-                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-purple-50 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Price"
                     min={0}
                     required
@@ -138,7 +138,7 @@ const AddAToy = () => {
                     max={5}
                     step="any"
                     name="rating"
-                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-purple-50 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Ratings"
                     required
                   />
@@ -149,7 +149,7 @@ const AddAToy = () => {
                   <input
                     type="number"
                     name="availableQuantity"
-                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-purple-50 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Available Quantity"
                     min={0}
                     required
@@ -159,7 +159,7 @@ const AddAToy = () => {
               <div className="col-span-2 lg:col-span-1">
                 <div className=" relative ">
                   <select
-                    className="block px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-full focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                    className="block px-4 py-2 text-gray-700 bg-purple-50 border border-gray-300 rounded-md shadow-sm w-full focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                     name="subCategory"
                     required
                   >
@@ -173,7 +173,7 @@ const AddAToy = () => {
               <div className="col-span-2">
                 <label className="text-gray-700">
                   <textarea
-                    className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-purple-50 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Detail Description"
                     name="description"
                     rows="5"
